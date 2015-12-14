@@ -39,15 +39,16 @@ $red:#cd1626;
 body {
   padding-top: 20px;
   padding-bottom: 20px;
+  a {
+    color:#000;
+    text-decoration: underline;
+    &:hover {
+      color:#000;
+    }
+  }
 }
 
-/* Everything but the jumbotron gets side spacing for mobile first views */
-.header,
-.marketing,
-.footer {
-  padding-left: 15px;
-  padding-right: 15px;
-}
+.qrcode {width:35%;height: 35%;}
 
 /* Custom page header */
 .header {
@@ -112,6 +113,21 @@ body {
     &.intro {
       margin:0px;
       padding: 20px 0px;
+      ul {
+        li {
+          padding-bottom: 10px;
+
+        }
+        .icon-flower {
+          color: #cd1626;
+          position: relative;
+          &:before {
+            position: absolute;
+            left: -50px;
+            top: 2px;
+          }
+        }
+      }
       p {
         padding: 0 0 0 30px;
         .icon-flower {
@@ -128,9 +144,9 @@ body {
   }
 }
 /* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 610px) {
   .container {
-    max-width: 730px;
+    max-width: 610px;
   }
 
   /* Remove the padding we set earlier */

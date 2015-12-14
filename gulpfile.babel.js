@@ -5,10 +5,17 @@ import browserSync from 'browser-sync';
 import del from 'del';
 import {stream as wiredep} from 'wiredep';
 import nunjucksRender from 'gulp-nunjucks-render';
+import tinypng from 'gulp-tinypng';
 
 
 const $ = gulpLoadPlugins();
 const reload = browserSync.reload;
+
+gulp.task('tinypng', function () {
+ gulp.src('dist/images/**/*.+(jpg|png)')
+   .pipe(tinypng('UrbzvfYcGCxnwR5CXf-yaCL1FHcAKvA3'))
+   .pipe(gulp.dest('dist/images/'));
+});
 
 gulp.task('nunjucks', function() {
   nunjucksRender.nunjucks.configure(['app/templates/']);
